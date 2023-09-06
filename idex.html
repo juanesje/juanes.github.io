@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>LOVE YOU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4F1964;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-left: -100px;
+            color: #fff;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        #yesBtn {
+            background-color: #f906a4;
+            color: #fff;
+            margin-left: -170px;
+        }
+
+        #noBtn {
+            background-color: #ff2f00;
+            color: #fff;
+            position: absolute;
+        }
+ 
+        #heart-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #heart {
+            font-size: 40px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Do you want to be my girlfriend?</p>
+        <button id="yesBtn">yes</button>
+        <button id="noBtn">no</button>
+    </div>
+    <div id="heart-container">
+        <img src="Logotype Boutique Fashion Neon.png" alt="love" id="heart">
+    </div>
+    <script>
+        const heart = document.querySelector('#heart');
+        const bodyWidth = window.innerWidth;
+        const bodyHeight = window.innerHeight;
+
+        function moveHeart() {
+            const randomX = Math.random() * (bodyWidth - heart.clientWidth);
+            const randomY = Math.random() * (bodyHeight - heart.clientHeight);
+            heart.style.left = randomX + 'px';
+            heart.style.top = randomY + 'px';
+        }
+
+        setInterval(moveHeart, 2000); // Mueve el corazón cada 2 segundos (ajusta este valor según tus preferencias)
+
+        const yesBtn = document.querySelector('#yesBtn');
+
+        yesBtn.addEventListener('click', function(){
+            alert('I knew you liked me and you loved me hahaha');
+        });
+
+        const noBtn = document.querySelector('#noBtn');
+
+        noBtn.addEventListener('mouseover', function (){
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
